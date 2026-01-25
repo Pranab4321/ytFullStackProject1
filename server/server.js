@@ -8,6 +8,7 @@ app.use("/api/auth", router);
 
 const PORT = 5000;
 
+// connection to db and server
 connectDB().then(()=>{
 app.listen(PORT,()=>{
     console.log(`Running http://localhost:${PORT}`);
