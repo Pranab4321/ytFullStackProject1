@@ -27,3 +27,5 @@ module.exports = connectDB;
 //     "phone": "8765476876",
 //     "password": "parthas"
 // }
+
+//http://localhost:5000/api/auth
