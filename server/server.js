@@ -15,3 +15,6 @@ app.listen(PORT,()=>{
     console.log(`Running http://localhost:${PORT}`);
 });
 });
+
+
+//http://localhost:5000/api/auth/register

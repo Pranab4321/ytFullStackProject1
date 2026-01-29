@@ -15,3 +15,15 @@ const connectDB = async ()=>{
 }
 
 module.exports = connectDB;
+
+// {
+//     "email": "parth@gmail.com",
+//     "password": "parthas"
+// }
+
+// {
+//     "username": "Parthas",
+//     "email": "parth1@gmail.com",
+//     "phone": "8765476876",
+//     "password": "parthas"
+// }
