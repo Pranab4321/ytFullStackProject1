@@ -1,6 +1,30 @@
 import React from "react";
+import { useState } from "react";
 
 export const Register = () => {
+
+  const [user, setUser] = useState({
+    username:"",
+    phone:"",
+    email:"",
+    password:"",
+  });
+
+  const handleInput = (e) =>{
+    const name = e.target.name
+    const value = e.target.value
+
+    setUser({
+      ...user,
+      [name] : value
+    })
+  }
+
+  const hanldeSubmit = (e) =>{
+    e.preventDefault();
+    console.log(user);
+  }
+
   return (
     <>
       <section>
@@ -21,7 +45,7 @@ export const Register = () => {
               <div className="registration-form">
                 <h1 className="main-heading mb-3">registration form</h1>
                 <br />
-                <form>
+                <form onSubmit={hanldeSubmit}>
                   <div>
                     <label htmlFor="username">username</label>
                     <input
@@ -31,6 +55,8 @@ export const Register = () => {
                       id="username"
                       required
                       autocomplete="off"
+                      value={user.username}
+                      onChange={handleInput}
                     />
                   </div>
 
@@ -43,11 +69,13 @@ export const Register = () => {
                       id="phone"
                       required
                       autocomplete="off"
+                      value={user.phone}
+                      onChange={handleInput}
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email">username</label>
+                    <label htmlFor="email">Email</label>
                     <input
                       type="email"
                       name="email"
@@ -55,11 +83,13 @@ export const Register = () => {
                       id="email"
                       required
                       autocomplete="off"
+                      value={user.email}
+                      onChange={handleInput}
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="password">username</label>
+                    <label htmlFor="password">Password</label>
                     <input
                       type="password"
                       name="password"
@@ -67,8 +97,15 @@ export const Register = () => {
                       id="password"
                       required
                       autocomplete="off"
+                      value={user.password}
+                      onChange={handleInput}
                     />
                   </div>
+                  <br />
+
+                  <button type="submit" className="btn btn-submit">
+                    Register Now
+                  </button>
                 </form>
               </div>
             </div>
