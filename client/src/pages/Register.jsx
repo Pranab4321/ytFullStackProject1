@@ -1,29 +1,30 @@
 import React from "react";
+import "../index.css";
+
 import { useState } from "react";
 
 export const Register = () => {
-
   const [user, setUser] = useState({
-    username:"",
-    phone:"",
-    email:"",
-    password:"",
+    username: "",
+    phone: "",
+    email: "",
+    password: "",
   });
 
-  const handleInput = (e) =>{
-    const name = e.target.name
-    const value = e.target.value
+  const handleInput = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
 
     setUser({
       ...user,
-      [name] : value
-    })
-  }
+      [name]: value,
+    });
+  };
 
-  const hanldeSubmit = (e) =>{
+  const hanldeSubmit = (e) => {
     e.preventDefault();
     console.log(user);
-  }
+  };
 
   return (
     <>
@@ -54,7 +55,7 @@ export const Register = () => {
                       placeholder="Enter username"
                       id="username"
                       required
-                      autocomplete="off"
+                      autoComplete="off"
                       value={user.username}
                       onChange={handleInput}
                     />
@@ -68,7 +69,7 @@ export const Register = () => {
                       placeholder="Enter phone"
                       id="phone"
                       required
-                      autocomplete="off"
+                      autoComplete="off"
                       value={user.phone}
                       onChange={handleInput}
                     />
@@ -82,7 +83,7 @@ export const Register = () => {
                       placeholder="Enter email"
                       id="email"
                       required
-                      autocomplete="off"
+                      autoComplete="off"
                       value={user.email}
                       onChange={handleInput}
                     />
@@ -96,7 +97,7 @@ export const Register = () => {
                       placeholder="Enter password"
                       id="password"
                       required
-                      autocomplete="off"
+                      autoComplete="off"
                       value={user.password}
                       onChange={handleInput}
                     />
@@ -111,6 +112,7 @@ export const Register = () => {
             </div>
           </div>
         </main>
+
       </section>
     </>
   );

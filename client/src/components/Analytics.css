@@ -1,0 +1,102 @@
+/* Analytics Page */
+#analytics-page {
+  min-height: 100vh;
+  padding: 4rem 1rem;
+  font-family: "Poppins", sans-serif;
+  background-color: azure;
+}
+
+/* Container */
+#analytics-page .cont {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Heading */
+#analytics-page h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtitle */
+#analytics-page .subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+/* Stats grid */
+#analytics-page .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.8rem;
+  margin-bottom: 4rem;
+}
+
+/* Individual stat card */
+#analytics-page .stat-card {
+  padding: 2.2rem 1.8rem;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+/* Hover effect */
+#analytics-page .stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Numbers */
+#analytics-page .stat-card h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 0.4rem;
+}
+
+/* Label */
+#analytics-page .stat-card p {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* Info section */
+#analytics-page .analytics-info {
+  max-width: 720px;
+}
+
+/* Section title */
+#analytics-page .analytics-info h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #111827;
+}
+
+/* Paragraph */
+#analytics-page .analytics-info p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  #analytics-page {
+    padding: 3rem 1rem;
+  }
+
+  #analytics-page h1 {
+    font-size: 2rem;
+  }
+
+  #analytics-page .stat-card h2 {
+    font-size: 2.2rem;
+  }
+}

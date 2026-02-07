@@ -1,4 +1,6 @@
 import React from "react";
+import "../index.css";
+
 import { useState } from "react";
 
 export const Login = () => {
@@ -53,7 +55,7 @@ export const Login = () => {
                       placeholder="Enter email"
                       id="email"
                       required
-                      autocomplete="off"
+                      autoComplete="off"
                       value={user.email}
                       onChange={handleInput}
                     />
@@ -67,7 +69,7 @@ export const Login = () => {
                       placeholder="Enter password"
                       id="password"
                       required
-                      autocomplete="off"
+                      autoComplete="off"
                       value={user.password}
                       onChange={handleInput}
                     />
@@ -75,7 +77,7 @@ export const Login = () => {
                   <br />
 
                   <button type="submit" className="btn btn-submit">
-                    Register Now
+                    Login
                   </button>
                 </form>
               </div>
