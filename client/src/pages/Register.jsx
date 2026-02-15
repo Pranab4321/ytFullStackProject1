@@ -2,6 +2,9 @@ import React from "react";
 import "../index.css";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const URL="http://localhost:5000/api/auth/register"
 
 export const Register = () => {
   const [user, setUser] = useState({
@@ -21,9 +24,33 @@ export const Register = () => {
     });
   };
 
-  const hanldeSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const hanldeSubmit = async (e) => {
     e.preventDefault();
     console.log(user);
+    try {
+      const response = await fetch(URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+
+      if (response.ok) {
+        setUser({
+          username: "",
+          phone: "",
+          email: "",
+          password: "",
+        });
+        navigate("/login");
+      }
+      console.log(response);
+    } catch (error) {
+      console.log("register ", error);
+    }
   };
 
   return (
@@ -112,7 +139,6 @@ export const Register = () => {
             </div>
           </div>
         </main>
-
       </section>
     </>
   );

@@ -2,6 +2,9 @@ import React from "react";
 import "../index.css";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const URL="http://localhost:5000/api/auth/login"
 
 export const Login = () => {
 
@@ -20,9 +23,35 @@ export const Login = () => {
     })
   }
 
-  const hanldeSubmit = (e) =>{
+const navigate = useNavigate();
+
+  const hanldeSubmit = async (e) =>{
     e.preventDefault();
-    console.log(user);
+    // console.log(user);
+    try {
+      const response= await fetch(URL,{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user),
+
+      })
+      if(response.ok){
+        alert("Login Successful");
+        setUser({email:"",password:""});
+        navigate("/");
+      }else{
+        alert("Invalid Credentials");
+        console.log("Invalid credentials")
+      }
+      console.log("login form: ",response);
+
+    } catch (error) {
+      console.log(error);
+    }
+
+
   }
 
   return (

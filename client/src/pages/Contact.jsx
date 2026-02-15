@@ -3,6 +3,8 @@ import "../index.css";
 
 import { useState } from "react";
 
+const URL="http://localhost:5000/api/auth/contact"
+
 export const Contact = () => {
 
   const [user, setUser] = useState({
@@ -21,9 +23,32 @@ export const Contact = () => {
     })
   }
 
-  const hanldeSubmit = (e) =>{
+  const hanldeSubmit = async (e) =>{
     e.preventDefault();
-    console.log(user);
+    // console.log(user);
+    try {
+      const response = await fetch(URL,{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          username:"",
+          email:"",
+          message:""}),
+      })
+
+      if(response.ok){
+        alert("Your details submitted successfully.")
+      }else{
+        alert("Invalid Credentials");
+        console.log("Invalid credentials")
+      }
+
+      console.log("Contact form: ",response)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
