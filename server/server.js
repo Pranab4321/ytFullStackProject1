@@ -16,7 +16,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/api/auth", authRoute);
-app.use("/api/auth", contactRoute);
+app.use("/api/form", contactRoute);
 app.use(errorMiddleware);
 
 const PORT = 5000;

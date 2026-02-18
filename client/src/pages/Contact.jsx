@@ -3,7 +3,7 @@ import "../index.css";
 
 import { useState } from "react";
 
-const URL="http://localhost:5000/api/auth/contact"
+const URL="http://localhost:5000/api/form/contact"
 
 export const Contact = () => {
 
@@ -32,10 +32,7 @@ export const Contact = () => {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-          username:"",
-          email:"",
-          message:""}),
+        body: JSON.stringify(user),
       })
 
       if(response.ok){

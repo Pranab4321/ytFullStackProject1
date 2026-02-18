@@ -2,4 +2,5 @@ The website is almost working.
 
 1. registration is perfectly working.
 2. login is also done. but logout is not done.
-3. contact is going on.
+3. contact is going on. here validator code, validate(contactForm), contact controller 
+are added.

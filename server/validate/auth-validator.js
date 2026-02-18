@@ -43,7 +43,30 @@ const loginSchema = z.object({
     .max(1024, "Password must not be more than 1024 char"),
 });
 
+const contactSchema = z.object({
+  username: z
+    .string({ required_error: "Name is required" })
+    .trim()
+    .min(3, "Name must be at least 3 characters")
+    .max(255, "Name must not be more than 255 characters"),
+
+  email: z
+    .string({ required_error: "Email is required" })
+    .trim()
+    .email("Invalid email format")
+    .min(3, "Email must be at least 3 characters")
+    .max(255, "Email must not be more than 255 characters"),
+
+  message: z
+    .string({ required_error: "Message is required" })
+    .trim()
+    .min(10, "Message must be at least 10 characters")
+    .max(1000, "Message must not be more than 1000 characters"),
+});
+
+
 module.exports = {
   signupSchema,
-  loginSchema
+  loginSchema,
+  contactSchema
 };
