@@ -9,6 +9,7 @@ import {Login} from "./pages/Login.jsx";
 import { Register } from "./pages/Register.jsx";
 import { Navbar } from "./components/Navbar.jsx";
 import { Error } from "./pages/Error.jsx";
+import { Logout } from "./pages/Logout.jsx";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/service" element={<Service/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/logout" element={<Logout/>}/>
           <Route path="*" element={<Error />}/>
         </Routes>
       </BrowserRouter>

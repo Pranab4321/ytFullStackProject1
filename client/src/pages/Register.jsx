@@ -3,6 +3,7 @@ import "../index.css";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../store/auth";
 
 const URL="http://localhost:5000/api/auth/register"
 
@@ -25,6 +26,7 @@ export const Register = () => {
   };
 
   const navigate = useNavigate();
+  const {storeTokenInLS} = useAuth();
 
   const hanldeSubmit = async (e) => {
     e.preventDefault();
@@ -39,6 +41,10 @@ export const Register = () => {
       });
 
       if (response.ok) {
+        const res_data = await response.json()
+        console.log("res from server: ",res_data)
+        storeTokenInLS(res_data.token)
+
         setUser({
           username: "",
           phone: "",
